@@ -158,7 +158,7 @@ int main(void) {
 
 <br/>
 
-## Reflection
+## Takeaways
 
 - find out the range of numbers to execute search
 - \*start analyzing on how to match the test cases, do not try to focus too much on the test cases which would make the solution narrower
