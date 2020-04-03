@@ -1,9 +1,11 @@
+[바킹독](https://blog.encrypted.gg/category/강좌/실전 알고리즘)
+
 # Contents
 
 1. [코드 작성 요령 1](#기초-코드-작성-요령-1)
 2. [코드 작성 요령 2](#기초-코드-작성-요령-2)
-3. 배열
-4. 연결리스트
+3. [배열](#배열)
+4. [연결리스트](#연결리스트)
 5. 스택
 6. 큐
 7. 덱
@@ -50,6 +52,7 @@
   - > 내가 알고리즘의 시간 복잡도를 고려했는지 생각해보자!
 
 - 공간
+
   - 512MB = 1.2 억 개 int형 변수 저장이 가능하다.
 
 <br/>
@@ -193,6 +196,7 @@
   ```
 
 * endl 절대 쓰지 않기.
+
   - '\n' 쓰기
 
 <br/>
@@ -203,3 +207,86 @@
 
 - 출력 맨 마지막에 공백, 줄바꿈 있어도 상관 없다.
 - 디버거는 사용하지 말라, cout을 사용하자.
+
+<br/>
+
+<br/>
+
+## 배열
+
+목차
+
+1. 정의와 성질
+2. 기능과 구현
+3. STL vector
+4. 연습 문제
+
+<br/>
+
+### 1. 정의와 성질
+
+- 배열의 성질
+  1. O(1)에 k번째 원소를 확인/변경 가능하다.
+  2. 추가적으로 소모되는 메모리의 양(=overhead)가 거의 없다.
+  3. Cache hit rate가 높다. [Cache hit rate 설명](https://blog.naver.com/sungeuns/50098123735)
+  4. 메모리 상에 연속한 구간을 잡아야 해서 할당에 제약이 걸린다.
+
+<br/>
+
+### 2. 기능과 구현
+
+- 임의의 위치에 원소를 추가 또는 제거
+
+  - O(N) 시간 소요
+
+- 사용 팁
+
+  - 배열 전체를 특정 값으로 초기화할 때
+
+    - memset 비추
+
+    - for문 이나 **algorithm의 fill 강추**
+
+      - ```c++
+        fill(v.begin(), v.end(), 0) // 0으로 초기화
+        ```
+
+<br/>
+
+### 3. STL vector
+
+- insert, erase 기능
+
+  - ```c++
+    v.insert(v.begin() + 1, 3); // {0, 0} -> {0, 3, 0}
+    v.erase(v.begin() + 2); // {0, 3}
+    ```
+
+- range-based for loop
+
+  - ```c++
+    vector<int> v(5, 0);
+    for (int i : v)
+        cout << i << ' '; // 0 0 0 0 0
+
+    for (int& i: v) {
+        i = 1;
+        cout << i << ' '; // 1 1 1 1 1
+    }
+    ```
+
+- v.size() -1
+
+  - ```c++
+    for (int i = 0; i <= v.size()-1; i++){
+        // error: if v is an empty vector, v.size() is unsigned int 0
+        // unsigned int overflow
+    }
+    ```
+
+<br/>
+
+### 4. 연습문제
+
+- 복습하고 확인하기
+- 배열 - https://blog.encrypted.gg/927?category=773649
