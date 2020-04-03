@@ -1,7 +1,7 @@
 # Contents
 
 1. [코드 작성 요령 1](#기초-코드-작성-요령-1)
-2. 코드 작성 요령 2
+2. [코드 작성 요령 2](#기초-코드-작성-요령-2)
 3. 배열
 4. 연결리스트
 5. 스택
@@ -94,3 +94,112 @@
 <br/>
 
 <br/>
+
+## 기초 코드 작성 요령 2
+
+목차
+
+1. STL과 함수 인자
+2. 표준 입출력
+3. 코드 작성 팁
+
+<br/>
+
+### 1. STL과 함수 인자
+
+- 함수 인자 - C++ 참조자(reference) vs C 포인터
+
+  - C++ 참조자
+
+    - ```C++
+      void swap(int& a, int& b){
+          int tmp = a;
+          a = b;
+          b = tmp;
+      }
+
+      void swap(int* a, int* b){
+          int tmp = a;
+          a = b;
+          b = tmp;
+      }
+      ```
+
+    - C 포인터와 비슷, 그러나 Null pointer에 값 넣거나, type이 다른 것을 마음대로 casting 문제 줄였다.
+
+- STL과 함수 인자
+
+  - vector reference
+
+    - ```c++
+      bool cmp(vector<int>& v1, vector<int>& v2, int idx){
+          return v1[idx] > v2[idx];
+      }
+      ```
+
+<br/>
+
+### 2. 표준 입출력
+
+- scanf/printf에서 C++ string 처리할 수 **없다.**
+
+  - char\*로 입력 받고, string 형 변환 휴 c_str()로 출력한다.
+
+    - ```c++
+      int main(void){
+          char str[10];
+          printf("input : ");
+          scanf("%s", str);
+          string s(str); // string s = str;
+          printf("str is %s\n", str);
+          printf("s is %s\n", s.c_str());
+      }
+      // str is something
+      // s is something
+      ```
+
+- 공백이 포함된 문자열을 받는 경우 주의하자.
+
+  - scanf/cin을 그대로 쓰면 망한다.
+
+  1. scanf를 쓰는 경우
+
+     - ```c++
+       char str[1];
+       scanf("%[^\n]", str); // 줄바꿈 전까지 입력 받겠다.
+       ```
+
+  2. cin을 쓰는 경우 - feat. getline
+
+     - ```c++
+       string s;
+       getline(cin, s);
+       cout << s;
+       ```
+
+     - cin.ignore()
+
+       ```c++
+       // 이전 cin 입력과정으로 버퍼에 개행문자가 남아 있는 경우
+       cin.ignore(); // 버퍼 비우기
+       getline(cin, string); // 정상 작동
+       ```
+
+* cin/cout만 쓸 경우 속도 빠르게 하자.
+
+  ```c++
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  ```
+
+* endl 절대 쓰지 않기.
+  - '\n' 쓰기
+
+<br/>
+
+### 3. 코드 작성 팁
+
+- 작동하게만 짜라.
+
+- 출력 맨 마지막에 공백, 줄바꿈 있어도 상관 없다.
+- 디버거는 사용하지 말라, cout을 사용하자.
