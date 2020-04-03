@@ -290,3 +290,105 @@
 
 - 복습하고 확인하기
 - 배열 - https://blog.encrypted.gg/927?category=773649
+
+<br/>
+
+<br/>
+
+## 연결리스트
+
+목차
+
+1. 정의와 성질
+2. 기능과 구현
+3. STL list
+4. 연습 문제
+
+<br/>
+
+### 1. 정의와 성질
+
+- 연결 리스트의 성질
+  1. k번째 원소를 확인/변경하기 위해 O(k)가 필요하다.
+  2. 임의의 위치에 원소를 추가/임의 위치의 원소 제거는 O(1)
+  3. 원소들이 메모리 상에 연속해있지 않아 Cache hit rate가 낮지만 할당이 다소 쉽다.
+- 연결 리스트의 종류
+
+  - 단일 연결 리스트 - singly linked list
+  - 이중 연결 리스트 - doubly linked list
+  - 원형 연결 리스트 - circular linked list
+
+- 배열 vs 연결 리스트
+
+  - |               항목               | 배열 | 연결 리스트 |
+    | :------------------------------: | :--: | :---------: |
+    |        k번째 원소의 접근         | O(1) |    O(k)     |
+    |    임의 위치에 원소 추가/제거    | O(N) |    O(1)     |
+    |         메모리 상의 배치         | 연속 |   불연속    |
+    | 추가적으로 필요한 공간(overhead) |  -   |    O(N)     |
+
+<br/>
+
+### 연결 리스트의 구현
+
+- ```c++
+  struct NODE {
+  	struct NODE *prev, *next;
+      int data;
+  }
+  ```
+
+- 야매 연결 리스트
+
+  - ```c++
+    const int MAX = 10000005;
+    int data[MAX], pre[MAX], nxt[MAX]; // 이전과 다음 원소를 배열 상 인덱스 저장하는 방식으로 구현했다.
+    int unused = 1;
+
+    fill(pre, pre+MAX, -1); // -1: 이전/다음 원소가 존재하지 않는다.
+    fill(nxt, nxt+MAX, -1);
+
+    // traverse()
+    void traverse(){
+        int cur = nxt[0];
+        while(cur != -1){
+            cout << dat[cur] << ' ';
+            cur = nxt[cur];
+        }
+        cout << "\n\n";
+    }
+    ```
+
+- 제일 마지막 원소 O(1)에 확인하는 방법?
+
+  - Circular linked list?
+
+<br/>
+
+### STL list
+
+- C++11 이상일 때 auto t = L.begin()
+
+- ```c++
+  int main(void){
+      list<int> L = {1, 2};
+      list<int>::iterator t = L.begin(); // t is at 1
+      L.push_front(10); // 10 1 2
+      cout << *t << '\n'; // 1
+      L.push_back(5); // 10 1 2 5
+      L.insert(t, 6); // at the front of t insert 6, 10 6 1 2 5
+      t++; // t is at 2
+      t = L.erase(t); // t is at 5
+      cout << *t << '\n' // 5
+          for (auto i : L) cout << i << ' ';
+      cout << '\n';
+      for (list<int>::iterator it = :.begin(); it != L.end(); it++)
+          cout << *it << ' ';
+  }
+  ```
+
+<br/>
+
+### 4. 연습문제
+
+- 풀어보기 - https://blog.encrypted.gg/932?category=773649
