@@ -575,9 +575,113 @@
 ### 1. 정의와 성질
 
 - Double Ended Queue
+
 - 양쪽 끝에서 삽입과 삭제가 전부 가능하다.
+
 - 덱의 성질
+
   1. 원소의 추가가 O(1)
   2. 원소의 제거가 O(1)
   3. 제일 앞/뒤의 원소 확인이 O(1)
   4. 제일 앞/뒤가 아닌 나머지 원소들의 확인/변경이 원칙적으로 불가능
+
+- > 인덱스로 원소에 접근할 수 있다. @STL deque
+  >
+  > VS. @STL stack, @STL queue는 불가하다.
+
+<br/>
+
+### 2. 기능과 구현
+
+- 배열 구현
+
+  - ```c++
+    const int MAX = 1000005;
+    int dat[2*MAX + 1];
+    int head = MAX, tail = MAX;
+    ```
+
+- push_front 함수, push_back 함수
+
+  - ```c++
+    void push_front(int num) {
+    	if (head >= 0) {
+            dat[--head] = num;
+        }
+    }
+
+    void push_back(int num) {
+        if (tail <= 2*MAX) {
+            dat[tail++] = num;
+        }
+    }
+    ```
+
+- pop_front 함수, pop_back 함수
+
+  - ```c++
+    void pop_front() {
+        if (head <= tail) {
+            head++;
+        }
+    }
+
+    void pop_back() {
+        if (head <= tail) {
+            tail--;
+    	}
+    }
+    ```
+
+- front 함수, back 함수
+
+  - ```c++
+    int front() {
+        return dat[head];
+    }
+
+    int back() {
+    	return dat[tail-1];
+    }
+    ```
+
+<br/>
+
+### 3. STL deque
+
+- similar to vector
+- BUT the elements are not stored in contiguous storage locations in deque.
+
+```c++
+#include <deque>
+using namespace std;
+
+deque<int> DQ;
+
+int main(void) {
+	DQ.push_front(10); // 10
+    DQ.push_back(50); // 10 50
+    DQ.push_front(24); // 24 10 50
+    cout << DQ.size() << '\n'; // 3
+    if (DQ.empty()) cout << "DQ is empty\n";
+    DQ.pop_front(); // 10 50
+    DQ.pop_back(); // 10
+    cout << DQ.back() << '\n'; // 10
+    DQ.push_back(72); // 10 72
+    cout << DQ.front() << '\n'; // 10
+    DQ.push_back(12); // 10 72 12
+    DQ[2] = 17; // 10 72 17
+    DQ.insert(DQ.begin() + 1, 33); // 10 33 72 17
+    DQ.insert(DQ.begin() + 4, 60); // 10 33 72 17 60
+    DQ.erase(DQ.begin() + 3); // 10 33 72 60
+    cout << DQ[3] << '\n'; // 60
+    DQ.clear();
+    return 0;
+}
+```
+
+<br/>
+
+### 4. 연습문제
+
+- https://www.acmicpc.net/problem/10866
