@@ -533,7 +533,51 @@
 - front/back 함수
 
   - ```c++
+    int front() {
+    	return dat[head];
+    }
 
+    int back() {
+    	return dat[tail-1];
+    }
     ```
 
-  -
+<br/>
+
+### 3. STL queue
+
+- 큐가 비어 있는데 front나 back, pop을 호출하면 runtime 에러가 발생한다.
+- 핵심유형
+  1. BFS
+  2. Flood Fill
+
+<br/>
+
+### 4. 연습문제
+
+​ 1. https://www.acmicpc.net/problem/10845
+
+<br/>
+
+<br/>
+
+## 덱
+
+목차
+
+1. 정의와 성질
+2. 기능과 구현
+3. STL deque
+4. 연습문제
+
+<br/>
+
+### 1. 정의와 성질
+
+- Double Ended Queue
+- 양쪽 끝에서 삽입과 삭제가 전부 가능하다.
+- 덱의 성질
+  1. 원소의 추가가 O(1)
+  2. 원소의 제거가 O(1)
+  3. 제일 앞/뒤의 원소 확인이 O(1)
+  4. 제일 앞/뒤가 아닌 나머지 원소들의 확인/변경이 원칙적으로 불가능
