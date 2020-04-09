@@ -10,15 +10,16 @@
 6. [큐](#큐)
 7. [덱](#덱)
 8. [스택활용(수식의 괄호쌍)](<#스택활용(수식의-괄호쌍)>)
-9. BFS
-10. DFS
-11. 재귀
-12. 백트래킹
-13. 시뮬레이션
-14. 정렬1
-15. 정렬2
-16. 다이나믹 프로그래밍
-17. 그리디
+9. [Flood Fill](#Flood-Fill)
+10. [BFS](#BFS)
+11. [DFS](#DFS)
+12. 재귀
+13. 백트래킹
+14. 시뮬레이션
+15. 정렬1
+16. 정렬2
+17. 다이나믹 프로그래밍
+18. 그리디
 
 <br/>
 
@@ -761,3 +762,110 @@ int main(void) {
       2. 소괄호일 경우 temp / 2, 중괄호일 경우 temp / 3
 
    4. impossible 혹은 스택이 비지 않았을 경우 무조건 0 출력, 아닐 경우에는 결과를 출력한다.
+
+<br/>
+
+<br/>
+
+## Flood Fill
+
+### 문제 개요
+
+- 다차원 배열에서 어떤 칸과 연결된 영역을 찾는 알고리즘
+- 마치 그림판에서 색 채우기 명령으로 동일한 색을 전부 바꾸는 것이다.
+
+<br/>
+
+<br/>
+
+## BFS
+
+### 개요
+
+- 다차원 배열에서 각 칸을 방문할 때 너비를 우선으로 방문하는 알고리즘이다.
+
+<br/>
+
+### 설명
+
+1. 시작하는 칸을 큐에 넣고 방문했다는 표시를 남긴다.
+2. 큐에서 원소를 꺼내어 그 칸에 상/하/좌/우로 인접한 4개의 칸에 대해 3번 행동을 한다.
+3. 해당 칸을 이전에 방문했다면 아무 것도 하지 않고, 처음으로 방문했다면 방문했다는 표시를 남기고 해당 칸을 큐에 넣는다.
+4. 큐의 모든 원소가 빌 때 까지 2를 반복한다.
+
+<br/>
+
+### 특징
+
+- 모든 칸이 큐에 1번 씩만 들어감이 보장되므로 시간복잡도는 칸이 N개일 때 O(N)이다.
+
+<br/>
+
+### 예시
+
+- https://blog.encrypted.gg/729?category=773649
+- 예시 코드
+  - https://0bin.net/paste/RcSjQF1D3wU6wHIs#C1aLSA1Wbaxy5JeMsLoHcRisFEofH0-Evx4d2YVtMrZ
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+#define X first
+#define Y second // pair에서 first, second를 줄여서 쓰기 위해서 사용한다.
+
+int board[502][502] = {
+    {1,1,1,0,1,0,0,0,0,0},
+    {1,0,0,0,1,0,0,0,0,0},
+    {1,1,1,0,1,0,0,0,0,0},
+    {1,1,0,0,1,0,0,0,0,0},
+    {0,1,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0}
+}; // 1 is Blue, 0 is Red
+
+bool visited[502][502]; // save visited
+int n = 7, m = 10; // n = number of rows, m = number of columns
+int dx[4] = {1, 0, -1, 0};
+int dy[4] = {0, 1, 0, -1}; // the four directions
+
+int main(void) {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    queue<pair<int, int>> Q;
+    visited[0][0] = 1; // check already visited (0, 0)
+    Q.push({0, 0}); // push to Q the starting point
+
+    while(!Q.empty()) {
+        auto cur = Q.front(); Q.pop();
+        cout << '(' << cur.X << ", " << cur.Y << ") -> ";
+        for (int dir = 0; dir < 4; dir++) { // will check for all 4-directions
+            int nx = cur.X + dx[dir];
+            int ny = cur.Y + dy[dir]; // nx, ny에 dir에서 정한 방향의 인접한 칸의 좌표가 들어간다.
+            if (nx < 0 or nx >= n   or ny < 0 or ny >= m) continue; // 범위 밖일 경우 넘어간다.
+            if (visited[nx][ny] or board[nx][ny] != 1) continue; // 이미 방문한 칸이거나 파란 칸이 아닐 경우 넘어간다.
+            visited[nx][ny] = 1; // (nx, ny)를 방문했다고 명시한다.
+            Q.push({nx, ny});
+        }
+    }
+}
+```
+
+<br/>
+
+### 응용
+
+- https://www.acmicpc.net/problem/1926
+- https://www.acmicpc.net/problem/2178
+
+<br/>
+
+### 자주 실수하는 요소
+
+1. 시작 점에 방문했다는 표시를 남기지 않는다.
+2. 큐에 넣을 때 방문했다는 표시를 하지 않고, 큐에서 빼낼 때 방문했다는 표시를 남긴다.
+3. 문자열로 지도를 입력 받았을 때 '1'과 비교를 해야 하는데 1과 비교를 한다.
+4. 이웃한 원소가 범위를 벗어났는지에 대한 체크를 잘못했다.
+5. 배열로 큐를 구현한 경우 ,큐의 크기를 충분하게 주지 않았다.
+6. 가로와 세로를 헷갈렸다.
+7. 여러 테스트 케이스를 처리해야 하는 경우, 변수를 제대로 초기화하지 않았다.
