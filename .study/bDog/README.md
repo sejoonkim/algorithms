@@ -9,7 +9,7 @@
 5. [스택](#스택)
 6. [큐](#큐)
 7. [덱](#덱)
-8. [스택활용(수식의 괄호쌍)](<#스택활용(수식의-괄호쌍)>)
+8. [스택활용(수식의 괄호쌍)](#스택활용(수식의-괄호쌍))
 9. [Flood Fill](#Flood-Fill)
 10. [BFS](#BFS)
 11. [DFS](#DFS)
@@ -86,7 +86,7 @@
 
 2. long long 범위에 담을 수 있는 정수는 double에 담지 말자.
 
-   - long long 19자리 > double 15자리
+   - long long 19자리 > double 15자리 
    - int는 double에 담을 수 있다.
 
 3. 실수 비교는 **등호**를 사용하지 말자.
@@ -121,7 +121,7 @@
           a = b;
           b = tmp;
       }
-
+      
       void swap(int* a, int* b){
           int tmp = a;
           a = b;
@@ -147,7 +147,7 @@
 
 - scanf/printf에서 C++ string 처리할 수 **없다.**
 
-  - char\*로 입력 받고, string 형 변환 휴 c_str()로 출력한다.
+  - char*로 입력 받고, string 형 변환 휴 c_str()로 출력한다.
 
     - ```c++
       int main(void){
@@ -189,14 +189,16 @@
        getline(cin, string); // 정상 작동
        ```
 
-* cin/cout만 쓸 경우 속도 빠르게 하자.
+       
+
+- cin/cout만 쓸 경우 속도 빠르게 하자.
 
   ```c++
   ios::sync_with_stdio(0);
   cin.tie(0);
   ```
 
-* endl 절대 쓰지 않기.
+- endl 절대 쓰지 않기.
 
   - '\n' 쓰기
 
@@ -205,7 +207,6 @@
 ### 3. 코드 작성 팁
 
 - 작동하게만 짜라.
-
 - 출력 맨 마지막에 공백, 줄바꿈 있어도 상관 없다.
 - 디버거는 사용하지 말라, cout을 사용하자.
 
@@ -246,7 +247,7 @@
 
     - memset 비추
 
-    - for문 이나 **algorithm의 fill 강추**
+    - for문 이나 **algorithm의 fill 강추**   
 
       - ```c++
         fill(v.begin(), v.end(), 0) // 0으로 초기화
@@ -269,7 +270,7 @@
     vector<int> v(5, 0);
     for (int i : v)
         cout << i << ' '; // 0 0 0 0 0
-
+    
     for (int& i: v) {
         i = 1;
         cout << i << ' '; // 1 1 1 1 1
@@ -347,10 +348,10 @@
     const int MAX = 10000005;
     int data[MAX], pre[MAX], nxt[MAX]; // 이전과 다음 원소를 배열 상 인덱스 저장하는 방식으로 구현했다.
     int unused = 1;
-
+    
     fill(pre, pre+MAX, -1); // -1: 이전/다음 원소가 존재하지 않는다.
     fill(nxt, nxt+MAX, -1);
-
+    
     // traverse()
     void traverse(){
         int cur = nxt[0];
@@ -362,7 +363,7 @@
     }
     ```
 
-- 제일 마지막 원소 O(1)에 확인하는 방법?
+- 제일 마지막 원소 O(1)에 확인하는 방법? 
 
   - Circular linked list?
 
@@ -490,12 +491,10 @@
 ### 1. 정의와 성질
 
 - 큐의 성질
-
   1. 원소의 추가가 O(1)
   2. 원소의 제거가 O(1)
   3. 제일 앞/뒤의 원소 확인이 O(1)
   4. 제일 앞/뒤가 아닌 나머지 원소들의 확인/변경이 원칙적으로 불가능
-
 - **중요**
   - STL queue에는 인덱스로 내부 원소를 접근하는 기능이 없다.
 
@@ -521,7 +520,7 @@
     }
     ```
 
-  -
+  - 
 
 - pop 함수
 
@@ -537,7 +536,7 @@
     int front() {
     	return dat[head];
     }
-
+    
     int back() {
     	return dat[tail-1];
     }
@@ -556,7 +555,7 @@
 
 ### 4. 연습문제
 
-​ 1. https://www.acmicpc.net/problem/10845
+​	1. https://www.acmicpc.net/problem/10845
 
 <br/>
 
@@ -610,7 +609,7 @@
             dat[--head] = num;
         }
     }
-
+    
     void push_back(int num) {
         if (tail <= 2*MAX) {
             dat[tail++] = num;
@@ -626,7 +625,7 @@
             head++;
         }
     }
-
+    
     void pop_back() {
         if (head <= tail) {
             tail--;
@@ -640,7 +639,7 @@
     int front() {
         return dat[head];
     }
-
+    
     int back() {
     	return dat[tail-1];
     }
@@ -715,7 +714,6 @@ int main(void) {
 ### 2. 문제 해결을 위한 관찰
 
 - 괄호의 종류가 여러 개인 경우
-
 - 문자열을 앞에서부터 읽어나갈 때, 닫는 괄호는 남아있는 괄호 중에서 가장 최근에 들어온 여는 괄호와 짝을 지어 없애버리는 명령이라고 생각한다.
 
 <br/>
@@ -734,9 +732,11 @@ int main(void) {
 ### 4. 연습문제
 
 1. https://www.acmicpc.net/problem/4949
+
    - use short-circuit evaluation
    - 스택을 전역으로 설정 했을 때 주의!
      - input 단위로 스택이 필요하기 때문에, input할 때마다 stack을 생성하자.
+
 2. https://www.acmicpc.net/problem/10799
 
    - 닫힌 괄호가 레이저를 의미하는지, 쇠막대기를 의미하는지?
@@ -745,7 +745,7 @@ int main(void) {
 
    1. 왼쪽 괄호가 나올 때마다 스택에 넣는다.
 
-      1. 핵심: temp = 1로 선언하여, '('일 때는 _ 2, '['일 때는 _ 3 한다.
+      1. 핵심: temp = 1로 선언하여, '('일 때는 * 2, '['일 때는 * 3 한다.
       2. 내용물이 있을 때와 없을 때를 구분하면 코드 길어지고 시간 많이 걸린다.
 
    2. 시간 단축을 위해 불가능한 조합이 나올 경우 미리 반복문에서 탈출한다.
@@ -835,7 +835,7 @@ int main(void) {
     queue<pair<int, int>> Q;
     visited[0][0] = 1; // check already visited (0, 0)
     Q.push({0, 0}); // push to Q the starting point
-
+    
     while(!Q.empty()) {
         auto cur = Q.front(); Q.pop();
         cout << '(' << cur.X << ", " << cur.Y << ") -> ";
@@ -869,3 +869,95 @@ int main(void) {
 5. 배열로 큐를 구현한 경우 ,큐의 크기를 충분하게 주지 않았다.
 6. 가로와 세로를 헷갈렸다.
 7. 여러 테스트 케이스를 처리해야 하는 경우, 변수를 제대로 초기화하지 않았다.
+
+<br/>
+
+<br/>
+
+## DFS
+
+### 개요
+
+- 다차원 배열에서 각 칸을 방문할 때 깊이를 우선으로 방문하는 알고리즘이다.
+
+<br/>
+
+### 설명
+
+1. 시작하는 칸을 스택에 넣고 방문했다는 표시를 남긴다.
+2. 스택에서 원소를 꺼내 그 칸에 상/하/좌/우로 인접한 4개의 칸에 대해 3번 행동을 한다.
+3. 해당 칸을 이전에 방문했다면 아무 것도 하지 않고, 처음으로 방문했다면 방문했다는 표시를 남기고 해당 칸을 스택에 넣는다.
+4. 스택의 모든 원소가 빌 때 까지 2를 반복한다.
+
+<br/>
+
+### 특징
+
+- 모든 칸이 스택에 1번씩 들어감이 보장되므로 시간복잡도는 칸이 N개일 때 O(N)입니다.
+- 큐에서 원소를 넣었다가 꺼내는지, 스택에서 원소를 넣었다가 꺼내는지
+
+<br/>
+
+### 예시
+
+- https://blog.encrypted.gg/729?category=773649
+- 예시 코드
+  - https://0bin.net/paste/fd4--ZSocw-8wCdN#d0dC6SHLTDS7wy7200cwBYIiyPrZechYUVGD81G9Kuz
+
+```c++
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+#define X first
+#define Y second // pair에서 first, second를 줄여서 쓰기 위해서 사용
+
+int board[502][502] =
+{{1,1,1,0,1,0,0,0,0,0},
+ {1,0,1,0,1,0,0,0,0,0},
+ {1,1,1,0,1,0,0,0,0,0},
+ {1,1,0,0,1,0,0,0,0,0},
+ {0,1,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0} }; // 1이 파란 칸, 0이 빨간 칸에 대응
+
+bool visited[502][502];
+int n = 7, m = 10;
+
+int dx[4] = { 1, 0, -1, 0};
+int dy[4] = { 0, 1, 0, -1 };
+
+int main(void) {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    stack< pair<int, int> > s;
+
+    visited[0][0] = 1;
+    s.push({0, 0});
+
+    while(!s.empty()) {
+        auto cur = s.top(); s.pop();
+        cout << '(' << cur.X << ", " << cur.Y << ") -> ";
+        for (int i = 0; i < 4; i++)
+        {
+            int nx = cur.X + dx[i];
+            int ny = cur.Y + dy[i];
+            if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
+            if (!board[nx][ny] || visited[nx][ny]) continue;
+            visited[nx][ny] = 1;
+            s.push({nx, ny});
+        }
+        
+    }
+    return 0;
+}
+```
+
+<br/>
+
+### 주의사항
+
+1. 거리가 정확하지 않다.
+   - 시작점으로부터의 거리를 잴 때는 DFS 대신 BFS를 사용해야 한다.

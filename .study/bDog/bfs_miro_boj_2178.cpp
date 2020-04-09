@@ -2,7 +2,7 @@
 start - 15:16
 end - 
 */
-#include <bits/stdc++.h>
+#include "/usr/local/include/stdc++.h"
 using namespace std;
 #define X first
 #define Y second
@@ -16,7 +16,7 @@ int main(void) {
     ios::sync_with_stdio(0);
     cin.tie(0);
     cin >> n >> m;
-
+    
     for (int i = 0; i < n; i++) {
         cin >> board[i];
     }
