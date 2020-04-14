@@ -31,3 +31,13 @@ Table of Contents
       ```
 
     - using ternary operator
+
+  - simple return in bool function
+
+    - ```c
+      bool is_greater(int x, int y) {
+          return x > y;
+      }
+      ```
+
+    - there would be a better way than if-elseing
