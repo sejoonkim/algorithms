@@ -128,3 +128,19 @@ Table of Contents
       }
 
       ```
+
+### 2.2 Power
+
+- IMPORTANT = the SIZE of problem n
+
+- = # of searching iteration n
+
+- ```c
+  double power(double x, int n) {
+      if (!n) return 1.0;
+      else if (n & 1) return x * power(x * x, (n - 1) / 2);
+      else return power(x * x, n / 2);
+  }
+  ```
+
+- O(logn)
