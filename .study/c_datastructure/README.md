@@ -180,4 +180,25 @@ Table of Contents
   }
   ```
 
+<br/>
+
+### 2.4 Hanoi
+
+- number of moves = 2^n - 1
+
+- ```c
+  void hanoi(int n, char from, char tmp, char to) {
+      if (n == 1) {
+  		printf("move 1 from %c to %c", from, to);
+      }
+      else {
+          hanoi(n-1, from, to, tmp);
+          printf("move %d from %c to %c", n, from, to);
+          hanoi(n-1, tmp, from, to);
+      }
+  }
+  ```
+
 -
+
+*
