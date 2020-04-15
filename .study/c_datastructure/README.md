@@ -129,6 +129,8 @@ Table of Contents
 
       ```
 
+<br/>
+
 ### 2.2 Power
 
 - IMPORTANT = the SIZE of problem n
@@ -144,3 +146,38 @@ Table of Contents
   ```
 
 - O(logn)
+
+<br/>
+
+### 2.3 Fibonacci
+
+- loop > recursion
+
+- ```c
+  int fib(int n) {
+  	if (n == 0) return 0;
+  	if (n == 1) return 1;
+  	return fib(n-1) + fib(n-2);
+  }
+  ```
+
+- ```c
+  int fib_loop(int n) {
+  	if (n == 0) return 0;
+      if (n == 1) return 1;
+
+      int pp = 0;
+      int p = 1;
+      int result;
+
+      for (int i = 2; i <= n; i++) {
+          result = p + pp;
+          pp = p;
+          p = result;
+      }
+
+      return result;
+  }
+  ```
+
+-
