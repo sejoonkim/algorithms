@@ -3,6 +3,7 @@
 Table of Contents
 
 1. Data Structures and Algorithms
+2. Recursion
 
 <br/>
 
@@ -79,3 +80,51 @@ Table of Contents
   - 1 - `int i = 0`
   - n + 1 - `i < n`
   - n - `i++`
+
+<br/>
+
+<br/>
+
+## Recursion
+
+### 2.1 Recursion and System Stack
+
+- Structure of memory
+
+  - from `lower memory address`
+  - CODE
+    - instructions
+    - CPU takes them one by one and executes
+  - DATA
+    - global and static variables
+  - HEAP
+    - size set at runtime
+    - **user** should manage well
+    - :arrow_down:
+  - STACK
+    - :arrow_up:
+    - size set at compile time
+    - deals with function calls by creating `stack frame` = `activation record`
+      - `return address` is saved
+      - `local variables` & `function parameters` are saved
+    - too much recursive function call would increase overhead in memory
+  - to `higher memory address`
+
+- structure of recursive algorithm
+
+  1. stopping condition
+  2. making recursive calls
+
+- basics of recursion
+
+  - state part of solution
+
+  - THEN do recursion on the **rest** of the problem
+
+    - ```c
+      factorial(int n) {
+          if (n <= 1) return 1;
+          else return n * factorial(n-1); // n = part of solution
+      }
+
+      ```
