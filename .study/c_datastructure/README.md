@@ -242,4 +242,20 @@ Table of Contents
   student a = {"kim", 20, 4.3}; // easy initialization
   ```
 
--
+<br/>
+
+### 3.3 Array: Polynomials
+
+- Which datastructure to use considering comfort and lower memory usage
+- 2 ways of arithmetic on two polynomials
+  1.  save coefs into array
+  1.  create struct that contains int and float array
+  1.  create a function that returns the finished array
+  1.  create global struct array
+      1.  declare struct with a pair { coef, expon }
+      2.  declare global struct array
+      3.  create a function that compares the expons and do operations
+
+<br/>
+
+### 3.4 Array: Sparse Matrix
