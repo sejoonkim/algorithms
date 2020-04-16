@@ -287,3 +287,23 @@ Table of Contents
       ```
 
   - check if NULL pointer before using it
+
+<br/>
+
+### 3.6 Dynamic Allocation of Memory
+
+- classic code
+
+  - ```c
+    int *p;
+    p = (int *)malloc(sizeof(int));
+    *p = 1000;
+    free(p);
+    ```
+
+  - cast the malloced pointer since `void *` gets returned from malloc()
+
+  - check if p is NULL
+
+- pointers and struct
+  - `(*ps).i` < `ps->i`
