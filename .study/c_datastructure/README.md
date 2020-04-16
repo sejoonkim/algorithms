@@ -4,6 +4,7 @@ Table of Contents
 
 1. Data Structures and Algorithms
 2. Recursion
+3. Array, Struct, Pointer
 
 <br/>
 
@@ -199,6 +200,46 @@ Table of Contents
   }
   ```
 
--
+<br/>
 
-*
+<br/>
+
+## Array, Struct, Pointer
+
+### 3.1 Array
+
+- Array ADT
+
+  - > Object: <index, value> pair
+    >
+    > Operation:
+    >
+    > - create(size) ::= create array with size size
+    > - get(A, i) ::= returns ith element in array A
+    > - set(A, i, n) ::= sets ith element in array A to n
+
+- Array Address
+
+  - `base` + `i * sizeof(int)`
+
+<br/>
+
+### 3.2 Struct
+
+- Array = continuous memory allocation for same datatypes
+
+- Struct = continuous memory allocation for different datatypes
+
+- '.' = membership operator
+
+- ```c
+  typedef StudentTag {
+      char name[10];
+      int age;
+      double gpa;
+  } student;
+
+  student a = {"kim", 20, 4.3}; // easy initialization
+  ```
+
+-

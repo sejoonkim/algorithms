@@ -23,8 +23,16 @@ int fib_iter(int n) {
     return result;
 }
 
+int fib(int n) {
+    printf("fib(%d) is called", n);
+    if(n == 0) return 0;
+    if (n == 1) return 1;
+    return fib(n-1) + fib(n-2);
+}
+
 int main(void) {
     int n = 5;
-    printf("%d", fibo(10));
+    // printf("%d", fibo(10));
+    fib(5);
     return 0;
 }
