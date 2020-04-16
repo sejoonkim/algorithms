@@ -259,3 +259,7 @@ Table of Contents
 <br/>
 
 ### 3.4 Array: Sparse Matrix
+
+- 2 ways to calculate the sparse matrix
+  1. classic 2-d array
+  2. using 2 structs to function like 2-d array
