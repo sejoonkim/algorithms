@@ -263,3 +263,27 @@ Table of Contents
 - 2 ways to calculate the sparse matrix
   1. classic 2-d array
   2. using 2 structs to function like 2-d array
+
+<br/>
+
+### 3.5 Pointer
+
+- basics
+
+  - a variable that contains other variable's address
+
+  - & operator
+
+    - ```c
+      int a = 100;
+      int *p;
+      p = &a;
+      ```
+
+  - \* operator
+
+    - ```c
+      *p = 200;
+      ```
+
+  - check if NULL pointer before using it
