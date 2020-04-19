@@ -249,12 +249,12 @@ Table of Contents
 - Which datastructure to use considering comfort and lower memory usage
 - 2 ways of arithmetic on two polynomials
   1.  save coefs into array
-  1.  create struct that contains int and float array
-  1.  create a function that returns the finished array
-  1.  create global struct array
-      1.  declare struct with a pair { coef, expon }
-      2.  declare global struct array
-      3.  create a function that compares the expons and do operations
+      1. create struct that contains int and float array
+      2. create a function that returns the finished array
+  2.  create global struct array
+      1. declare struct with a pair { coef, expon }
+      2. declare global struct array
+      3. create a function that compares the expons and do operations
 
 <br/>
 
@@ -306,4 +306,44 @@ Table of Contents
   - check if p is NULL
 
 - pointers and struct
+
   - `(*ps).i` < `ps->i`
+
+<br/>
+
+<br/>
+
+## Stack
+
+### 4.1 What is Stack
+
+- System Stack
+
+  - Activation Record created per function call
+    1. return address
+    2. program counter
+    3. function parameters
+    4. local variables in the function
+
+- Stack ADT
+
+  - ```reStructuredText
+    Object: finite linear list containing at least 1 element
+    Operations:
+    	create(size) ::= create stack with size size
+    	is_full(s) ::=
+    		if (stack_elem == SIZE) return TRUE;
+    		else return FALSE;
+    	is_empty(s) ::=
+    		if (stack_elem == 0) return TRUE;
+    		else return FALSE;
+    	push(s, item) :==
+    		if (is_full(s)) return ERROR_STACKFULL;
+    		else add item to the top of the stack.
+    	pop(s) :==
+    		if (is_empty(s)) return ERROR_STACKEMPTY;
+    		else delete stack top and return it.
+    	peek(s) :==
+    		if (is_empty(s)) return ERROR_STACKEMPTY;
+    		else return stack top.
+    ```
