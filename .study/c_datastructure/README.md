@@ -386,3 +386,35 @@ Table of Contents
   ```
 
 <br/>
+
+### 4.3 Dynamic Array Stack
+
+- create StackType statically
+
+- the actual stack array works dynamically
+
+- ```c
+  void init_stack(StackType *s) {
+      s->top = -1;
+      s->capacity = 1;
+      s->data = (element *)malloc(s->capacity * sizeof(element));
+      if (s->data == NULL){
+          fprintf(stderr, "No more memory");
+          exit(1);
+      }
+  }
+
+  void push(StackType *s, element item) {
+      if (is_full(s)) {
+          s->capacity *= 2;
+          s->data = (element *)realloc(s->data, s->capacity * sizeof(element));
+          if (s->data == NULL) {
+              fprintf(stderr, "No more memory");
+              exit(1);
+          }
+      }
+      s->data[++(s->top)] = item;
+  }
+  ```
+
+- the size of the stack array is being reallocated doubly
