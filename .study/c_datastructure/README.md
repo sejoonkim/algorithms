@@ -509,7 +509,7 @@ Table of Contents
     /*
     1
     49
-    ?
+    ╔
     1
     -------------
     9
@@ -540,3 +540,11 @@ Table of Contents
 
   - the magic of `int` and `char`, feat. **casting**
   - placed `whitespaces` when infix -> postfix for multi digit support
+
+### 4.6 Maze
+
+1. Initialize the stack, exit location, start location
+2. if the location is not yet visited, visit
+3. up, down, left, right check availability
+4. check if empty stack = no where available to move => failure
+5. if not empty stack -> change here -> continue move
