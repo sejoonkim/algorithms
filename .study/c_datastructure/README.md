@@ -347,3 +347,42 @@ Table of Contents
     		if (is_empty(s)) return ERROR_STACKEMPTY;
     		else return stack top.
     ```
+
+<br/>
+
+### 4.2 Stack Implementation
+
+- ```c
+  typedef int element;
+  typedef struct {
+      element data[MAX_SIZE];
+      int top;
+  } StackType;
+
+  void init_stack(StackType *s) {
+      s->top = -1;
+  }
+  ```
+
+- create code for
+
+  - is_empty
+  - is_full
+  - push
+  - pop
+  - peek
+
+- ```c
+  int main(void) {
+      // Dynamic memory allocation
+      StackType *s = (StackType*)malloc(sizeof(StackType));
+
+      // Static memory allocation
+      StackType t;
+
+      free(s);
+      return 0;
+  }
+  ```
+
+<br/>
