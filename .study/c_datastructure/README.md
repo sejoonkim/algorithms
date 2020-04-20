@@ -418,3 +418,30 @@ Table of Contents
   ```
 
 - the size of the stack array is being reallocated doubly
+
+<br/>
+
+### 4.4 Q: Check Parenthesis
+
+- ```c
+  for (i = 0; i < n; i++) {
+          ch = in[i];
+          switch (ch) {
+              case '(': case '[': case '{':
+                  push(&s, ch);
+                  break;
+              case ')': case ']': case '}':
+                  open_ch = pop(&s);
+                  if (open_ch == '(' && ch != ')' || open_ch == '[' && ch != ']' || open_ch == '{' && ch != '}')
+                      return 0; // failed
+                  break;
+          }
+      }
+      if (!is_empty(&s)) return 0; // remain in stack: failure
+      return 1;
+  ```
+
+- failure condition
+
+  1. char pairs do not match
+  2. stack is not empty
