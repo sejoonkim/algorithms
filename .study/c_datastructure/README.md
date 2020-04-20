@@ -509,7 +509,7 @@ Table of Contents
     /*
     1
     49
-    ╔
+    ?
     1
     -------------
     9
@@ -535,3 +535,8 @@ Table of Contents
     - and trying to output with %d
       - it is possible to do arithmetic operations with int variables and save the result to char array
       - -128 ~ 127 = char array range
+
+- Multi-Digit infix, postfix calculator
+
+  - the magic of `int` and `char`, feat. **casting**
+  - placed `whitespaces` when infix -> postfix for multi digit support
