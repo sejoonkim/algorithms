@@ -445,3 +445,93 @@ Table of Contents
 
   1. char pairs do not match
   2. stack is not empty
+
+<br/>
+
+### 4.5 Pre, In, Post fix Operation
+
+- why computer prefer postfix?
+
+  - no need for parentheses
+  - no need to manipulate Order of Operations
+    - already in the order
+  - fast computation time
+    - compute while reading the sentence
+      - since no parentheses
+
+- saving int type to char type array
+
+  - ```c
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    void toCharArray(char arr[], char integer, int index) {
+        arr[index] = integer;
+    }
+
+    int main(void) {
+        char arr[4] = "1900";
+        int number_one = arr[0] - '0';
+        printf("%c\n", arr[0]);
+        printf("%d\n", arr[0]);
+        toCharArray(arr, number_one, 0);
+        printf("%c\n", arr[0]);
+        printf("%d\n", arr[0]);
+
+        printf("-------------\n");
+
+        int number_nine = arr[1] - '0';
+        printf("%c\n", arr[1]);
+        printf("%d\n", arr[1]);
+        toCharArray(arr, number_nine, 1);
+        printf("%c\n", arr[1]);
+        printf("%d\n", arr[1]);
+
+        printf("-------------\n");
+
+        int number_ten = 10;
+        printf("%c\n", arr[2]);
+        printf("%d\n", arr[2]);
+        toCharArray(arr, number_ten, 2);
+        printf("%c\n", arr[2]);
+        printf("%d\n", arr[2]);
+
+        printf("-------------\n");
+
+        int large_num = 130;
+        printf("%c\n", arr[3]);
+        printf("%d\n", arr[3]);
+        toCharArray(arr, large_num, 3);
+        printf("%c\n", arr[3]);
+        printf("%d\n", arr[3]);
+        return 0;
+    }
+    /*
+    1
+    49
+    ╔
+    1
+    -------------
+    9
+    57
+
+    9
+    -------------
+    0
+    48
+
+
+    10
+    -------------
+    0
+    48
+    ?
+    -126
+    */
+    ```
+
+  - if the numbers that are dealt with is in range 0 ~ 9
+
+    - and trying to output with %d
+      - it is possible to do arithmetic operations with int variables and save the result to char array
+      - -128 ~ 127 = char array range
