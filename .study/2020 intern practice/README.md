@@ -1,6 +1,6 @@
 ## Problem Solving Lessons
 
-1. cranedoll_pgmrs_64061.cpp
+1. [cranedoll_pgmrs_64061.cpp](https://github.com/sejoonkim/algorithms/blob/master/.study/2020%20intern%20practice/cranedoll_pgmrs_64061.cpp)
 
    - Questions
 
