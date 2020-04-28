@@ -5,6 +5,8 @@ Table of Contents
 1. Data Structures and Algorithms
 2. Recursion
 3. Array, Struct, Pointer
+4. Stack
+5. Queue
 
 <br/>
 
@@ -509,7 +511,7 @@ Table of Contents
     /*
     1
     49
-    ╔
+    ?
     1
     -------------
     9
@@ -541,6 +543,8 @@ Table of Contents
   - the magic of `int` and `char`, feat. **casting**
   - placed `whitespaces` when infix -> postfix for multi digit support
 
+<br/>
+
 ### 4.6 Maze
 
 1. Initialize the stack, exit location, start location
@@ -548,3 +552,11 @@ Table of Contents
 3. up, down, left, right check availability
 4. check if empty stack = no where available to move => failure
 5. if not empty stack -> change here -> continue move
+
+<br/>
+
+<br/>
+
+## 5. Queue
+
+### 5.2 Linear Queue
