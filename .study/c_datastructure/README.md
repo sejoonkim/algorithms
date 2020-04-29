@@ -646,3 +646,26 @@ Table of Contents
   - empty
   - full
   - print
+
+<br/>
+
+### 6.2 LL with Array
+
+- sequential representation
+
+- insert element to `pos`
+
+  ```c
+  for (int i = (L->size - 1); i >= pos; i--) {
+      L->array[i + 1] = L->array[i];
+  }
+  // L->array[L->size] always points to the next element in array, which is empty
+  ```
+
+- Time Complexity
+
+  - access arbitrary index
+    - O(1)
+  - insert or delete
+    - Worst: 0(N)
+    - Best: O(1)
