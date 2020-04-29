@@ -683,3 +683,21 @@ Table of Contents
   - last node ->next == NULL
 - circular linked list
 - doubly linked list
+
+<br/>
+
+### 6.4 Singly Linked List
+
+- Node
+
+  - self-referential structure
+
+- Head pointer is Crucial
+
+  - if head pointer points to `NULL` , then it is an empty list
+
+- Using pointers to access struct members
+  1. `(\*p).member
+     - order of operation `* < .`
+  2. p->member
+     - `->` operator goes to the address saved in p, access struct's member
