@@ -613,3 +613,36 @@ Table of Contents
     > rear <- (rear-1 + MAX_QUEUE_SIZE) % MAX_QUEUE_SIZE;
 
   - add `MAX_QUEUE_SIZE` when **negative**
+
+<br/>
+
+### 5.6 Simulation
+
+- Pseudo Code
+  1. increment `clock`
+  2. create random number [0:10], if num < 3, consider new customer
+  3. check if `service_time` = 0
+  4. after 60 minutes, `printf` waited times
+
+<br/>
+
+<br/>
+
+## Linked List 1
+
+### 6.1 List ADT
+
+- Object: datatype `element`, consisted of `n` number of elements that have order
+- Operations
+  - insert
+    - at position
+    - first
+    - last
+  - delete
+    - at position
+  - clear
+  - get_entry
+  - get_length
+  - empty
+  - full
+  - print
