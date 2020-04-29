@@ -560,3 +560,17 @@ Table of Contents
 ## 5. Queue
 
 ### 5.2 Linear Queue
+
+<br/>
+
+### 5.3 Circular Queue
+
+- update `front` and `rear` values to 0 when at the end of the queue
+
+  - initialize them to `0` not `-1`
+  - increment `rear` and insert value
+  - increment `front` and insert value
+  - to distinguish **full** and **empty**
+    - if `front` == `rear` -> empty
+
+- without `count` the max number of elements = `MAX NUM - 1`
