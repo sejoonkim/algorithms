@@ -14,7 +14,7 @@ int main(void) {
     string str = "RadAr.";
     string str_conv = str;
 
-    transform(str.begin(), str.end(), str_conv.begin(), ::tolower);
+    //transform(str.begin(), str.end(), str_conv.begin(), ::tolower);
 
     if (str.size() == 1) {
         isPalin = false;
@@ -23,8 +23,12 @@ int main(void) {
 
 // check for only characters
     for (int i = 0; i < str_conv.size(); i++) {
-        if (str_conv[i] == ' ' || str_conv[i] == '.' || str_conv[i] == ',') continue;
-        dq.push_back(str_conv[i]);
+        if ('a' <= str[i] && str[i] <= 'z') {
+            dq.push_back(str[i]);
+        }
+        else if ('A' <= str[i] && str[i] <= 'Z') {
+            dq.push_back(str[i] - 'A' + 'a');
+        }
     }
 
     while(!dq.empty()) {
@@ -50,6 +54,7 @@ int main(void) {
     }
     return 0;
 }
+
 
 /*
 How to determin palindrome
