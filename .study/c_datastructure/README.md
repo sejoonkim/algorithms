@@ -594,3 +594,22 @@ Table of Contents
         print_queue(&queue);
     }
     ```
+
+<br/>
+
+### 5.5 Deque
+
+- double-ended queue
+- compared to Circular Queue
+
+  - `delete_rear()`
+  - `add_front()`
+  - `get_rear()`
+
+- when `front`, `rear` become **negative**
+
+  - > front <- (front-1 + MAX_QUEUE_SIZE) % MAX_QUEUE_SIZE;
+    >
+    > rear <- (rear-1 + MAX_QUEUE_SIZE) % MAX_QUEUE_SIZE;
+
+  - add `MAX_QUEUE_SIZE` when **negative**
