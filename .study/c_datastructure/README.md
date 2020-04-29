@@ -566,11 +566,31 @@ Table of Contents
 ### 5.3 Circular Queue
 
 - update `front` and `rear` values to 0 when at the end of the queue
-
   - initialize them to `0` not `-1`
   - increment `rear` and insert value
   - increment `front` and insert value
   - to distinguish **full** and **empty**
     - if `front` == `rear` -> empty
-
 - without `count` the max number of elements = `MAX NUM - 1`
+
+<br/>
+
+### 5.4 Application: Buffer
+
+- `srand(x)`
+
+  - set the starting value **(seed)** used by function `rand()`
+
+  - `srand(time(NULL));`
+
+    - using computer's internal clock to control the choice of the seed
+
+    ```c
+    srand(time(NULL));
+
+    for (int i = 0; i < 100; i++) {
+        if (rand() % 5 == 0)
+            enqueue(&queue, rand() % 100);
+        print_queue(&queue);
+    }
+    ```
