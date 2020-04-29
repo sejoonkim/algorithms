@@ -669,3 +669,17 @@ Table of Contents
   - insert or delete
     - Worst: 0(N)
     - Best: O(1)
+
+<br/>
+
+### 6.3 LL
+
+- linked representation
+- vs LL with Array
+  - difficult to implement
+  - takes more memory space
+  - slow retrieval time
+- singly linked list
+  - last node ->next == NULL
+- circular linked list
+- doubly linked list
