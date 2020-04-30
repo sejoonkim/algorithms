@@ -701,3 +701,25 @@ Table of Contents
      - order of operation `* < .`
   2. p->member
      - `->` operator goes to the address saved in p, access struct's member
+
+<br/>
+
+### 6.5 Implement SLL
+
+- `head pointer` points to the first element in list
+
+- methods
+
+  - `insert_first`
+  - `insert`
+  - `delete_first`
+  - `delete`
+  - `print_list`
+
+- loop until the end of list
+
+  ```c
+  for(ListNode *p = head; p != NULL; p = p->link)
+  ```
+
+  - very similar to `list<int>::iterator iter`
