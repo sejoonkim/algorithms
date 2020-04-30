@@ -1,16 +1,42 @@
-## Problem Solving Lessons
+## Greedy Algorithm
 
-1. [cranedoll_pgmrs_64061.cpp](https://github.com/sejoonkim/algorithms/blob/master/.study/2020%20intern%20practice/cranedoll_pgmrs_64061.cpp)
+### Basic Concept
 
-   - Questions
+- compared with `Dynamic Programming` does not guarantee optimal solution
+- along with `Dynamic Programming`
+  - the problem requires `Optimal Sub-Structure`
+- Process of Greedy Algorithm
+  1. Find Solution
+     - find optimal solution for the sub-problem
+     - add it to the solution set
+  2. Check Applicable
+     - check if the new solution set is executable
+  3. Match with Target
+     - check if the new solution set is the solution to the problem
+     - if not, loop from 1.
 
-     1. How to do array traversal?
+<br/>
 
-     2. How to get sizes of 2-d array?
+### Q1: Change
 
-   - Lessons
+1. Find Solution
+   - choose the biggest value coin
+2. Check Applicable
+   - check if the biggest value coin exceeds actual change
+   - if true, choose the next biggest value coin
+3. Match with Target
+   - if not, loop from 1
 
-     1. Think harder before solving problems
-     2. No redundant if-elses
-     3. Write pseudo code considering per `block of operations`
-     4. Array traversal can be different from **loop operations**
+<br/>
+
+### 그리디의 함정
+
+1. 0/1 knapsack problem
+
+   - 부피 대비 가치 선택
+     - 반례: 부피 - 10, 물건 - (6,7), (5,5), (5,3)
+     - 정해: O(NK) DP or O(2^N) 전수조사
+
+2. [휴게소](https://icpc.me/1477)
+   - 휴개소 0개 일 때, 새로운 휴게소 2개를 세우는 과정
+   - 정해: O(Nlg1000) 이분탐색
