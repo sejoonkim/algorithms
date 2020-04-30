@@ -737,3 +737,32 @@ Table of Contents
 #### LL implement search_list
 
 - loop using `for` or `while`
+
+#### LL implement concat_list
+
+```c
+while (p->link != NULL) vs while (p != NULL)
+```
+
+- the **former** stops at the last node
+- the **latter** stops **after** the last node
+
+#### LL implement reverse
+
+- use 3 `pointers`, always know the next element
+
+  ```c
+  ListNode* reverse(ListNode *head) {
+      ListNode *p, *q, *r;
+
+      p = head;
+      q = NULL;
+      while (p != NULL) {
+          r = q; // r follows q,
+          q = p; // q follows p
+          p = p->link; // p will end up becoming NULL
+          q->link = r; // connecting the link
+      }
+      return q;
+  }
+  ```
