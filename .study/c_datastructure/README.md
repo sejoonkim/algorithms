@@ -766,3 +766,18 @@ while (p->link != NULL) vs while (p != NULL)
       return q;
   }
   ```
+
+<br/>
+
+### 6.6 Application: Polynomials
+
+- addition
+  - concept: use 2 `pointers`, traverse each polynomials
+  - 3 cases
+    - p.expon == q.expon
+    - p.expon > q.expon
+    - p.expon < q.expon
+- using `header` node
+  - size
+  - pointer front
+  - pointer back
