@@ -723,3 +723,17 @@ Table of Contents
   ```
 
   - very similar to `list<int>::iterator iter`
+
+#### LL with char datatype
+
+- implement with struct containing char array
+
+  ```c
+  typedef struct {
+  	char name[100];
+  } element;
+  ```
+
+#### LL implement search_list
+
+- loop using `for` or `while`
