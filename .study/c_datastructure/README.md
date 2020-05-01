@@ -857,3 +857,80 @@ while (p->link != NULL) vs while (p != NULL)
 - SLL + 2 pointers `front` `back`
 - insert_back
 - delete_front
+
+<br/>
+
+<br/>
+
+## Tree
+
+### 8.1 What is Tree?
+
+- Used when data has `hierarchical structure`
+- structure
+
+  - root
+    - subtree
+  - all composed of nodes and `edges`
+  - parent node
+    - children node
+  - node's perspective
+    - ancestor node
+    - descendent node
+  - terminal node / nonterminal node
+  - `degree`
+    - '#' of children nodes
+    - terminal nodes have degree of `0`
+  - `level`
+    - root = `level 1`
+    - level++
+  - `height`
+    - highest `level`
+
+- binary tree
+  - if more than 2 degrees in a node
+    - more complexity
+
+<br/>
+
+### 8.2 Binary Tree
+
+- `Definition`
+  1. empty tree
+  2. root
+     - left subtree(binary tree)
+     - right subtree(binary tree)
+- compared with normal tree
+
+  1. every node's degree <= 2
+  2. empty node ok
+  3. each subtree is distinguished
+
+- `Properties`
+
+  1. n node binary tree
+
+     - has `n-1` edges
+     - why? every node has `1` parent node, 1 `edge` in between
+
+  2. height `h` binary tree
+     - at least `h` nodes
+     - at largest `2^h - 1` nodes
+     - at least `1`node in a `level`
+  3. `n` node binary tree
+     - at least upper(`log2(n+1)`) high
+     - at largest `n` high
+
+- `Categories`
+  1. full binary tree
+     - max nodes at each `level`
+     - height `k` tree has `2^k - 1` nodes
+     - numbering
+       - from the left node
+  2. complete binary tree
+     - from `level` 1 ~ k-1 = full nodes
+     - at `level k` nodes filled from the `left`
+       - no `empty` nodes in the middle
+  3. other trees
+
+<br/>
