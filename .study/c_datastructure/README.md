@@ -810,3 +810,33 @@ while (p->link != NULL) vs while (p != NULL)
 2. Multiplayer Game
 3. Making Circular Queue
    1. needs 2 pointers `front` & `rear`
+
+<br/>
+
+### 7.3 Doubly Linked List
+
+- Basic Concept
+
+  - 1 node had `prev` `next` links
+  - takes up more space
+  - DLL + CLL
+  - `head node`
+    - When empty
+    - p = p->llink->rlink = p->rlink->llink
+
+- insert
+
+  1. link new node
+  2. link prev
+  3. link next
+
+- delete
+
+- no need for head pointers
+  - important = init()
+
+<br/>
+
+### 7.4 Mp3 Player
+
+- `header node` = node with no data, just links
