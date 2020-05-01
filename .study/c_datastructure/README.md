@@ -840,3 +840,20 @@ while (p->link != NULL) vs while (p != NULL)
 ### 7.4 Mp3 Player
 
 - `header node` = node with no data, just links
+
+<br/>
+
+### 7.5 LL Stack
+
+- linked stack
+- insert at the top
+- delete at the top
+
+<br/>
+
+### 7.6 LL Queue
+
+- linked queue
+- SLL + 2 pointers `front` `back`
+- insert_back
+- delete_front
