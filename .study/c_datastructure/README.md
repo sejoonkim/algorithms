@@ -511,7 +511,7 @@ Table of Contents
     /*
     1
     49
-    ?
+    ╔
     1
     -------------
     9
@@ -781,3 +781,32 @@ while (p->link != NULL) vs while (p != NULL)
   - size
   - pointer front
   - pointer back
+
+<br/>
+
+<br/>
+
+## Linked List 2
+
+### 7.1 Circular Linked List
+
+- Basic Concept
+
+  - last node points first node
+  - **traverse** the whole list, starting from any node
+  - **insert/delete** always needs `*prev`
+
+- `head` points to the last element
+- `head->link` points to the first element
+
+- insert_first
+- insert_last
+
+<br/>
+
+### 7.2 Applications for Circular LL
+
+1. Queuing processes for CPU
+2. Multiplayer Game
+3. Making Circular Queue
+   1. needs 2 pointers `front` & `rear`
