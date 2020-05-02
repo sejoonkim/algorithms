@@ -511,7 +511,7 @@ Table of Contents
     /*
     1
     49
-    ?
+    ╔
     1
     -------------
     9
@@ -1120,3 +1120,19 @@ while (p->link != NULL) vs while (p != NULL)
     - keep BT balanced -> AVL trees etc
 
 <br/>
+
+### 8.12 Application: Eng Dictionary
+
+- operations
+
+  - insert
+  - delete
+  - search
+  - print
+  - quit
+
+- `compare`
+  - `strcmp`
+    - return -1 when 1 < 2
+    - return 0 when 1 == 2
+    - return 1 when 1 > 2
