@@ -1063,3 +1063,60 @@ while (p->link != NULL) vs while (p != NULL)
   1. require `tag` to distinguish terminal or nonterminal nodes
 
   2. `find_successor()`check for successor
+
+<br/>
+
+### 8.11 Binary Search Tree
+
+- search
+
+  - table
+    - records(key)
+      - many fields
+
+- `Definition`
+  - `primary key` for any record
+  - root > left subtree
+  - root < right subtree
+- `search(root, key)`
+
+  - check `key` value with root
+    - if same: found
+    - if smaller: search(root->left, key)
+    - if larger: search(root->right, key)
+  - `recursion`
+    - return NULL when after reaching the terminal node
+  - `loop`
+    - return NULL when search is failed
+
+- `insert()`
+
+  - `search()`
+    - failed location is the place to insert
+  - return modified root pointer
+
+- `delete()`
+
+  - `search()`
+
+  1. if node == terminal node
+     1. delete the terminal node
+        - parent's link to `NULL`
+        - free(terminal)
+  2. if node has 1 child
+     1. delete self
+     2. move the child up
+  3. if node has 2 children = which node `to bring up to` delete node's location
+     1. get the next minimum value
+     2. save it to the root node
+     3. delete the minimum node
+
+- analysis
+
+  - `O(h)`
+    - search, insert, delete
+  - so n nodes -> `O(log2h)`
+  - if not balanced -> O(n) like linear DS
+    - keep BT balanced -> AVL trees etc
+
+<br/>
