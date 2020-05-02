@@ -1004,3 +1004,27 @@ while (p->link != NULL) vs while (p != NULL)
   - order to operate
     - child nodes first? `postorder`
     - parent nodes first? `preorder`
+
+<br/>
+
+### 8.7 Application: Expression Tree
+
+- preorder, inorder, postorder traversal
+
+  - prefix, infix, postfix expressions
+
+- considering expression tree
+
+  - operator
+
+    - operand
+    - operand
+
+  - traverse child nodes first and visit root = `postorder` traversal
+
+<br/>
+
+### 8.8 Application: Directory Size
+
+- postorder traversal
+  - recursion algorithm returns size
