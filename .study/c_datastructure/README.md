@@ -1028,3 +1028,17 @@ while (p->link != NULL) vs while (p != NULL)
 
 - postorder traversal
   - recursion algorithm returns size
+
+<br/>
+
+### 8.9 Methods in Binary Tree
+
+1. `get_node_count(x)`
+   - if root is not NULL, return 1 + get_noed_count(x.left) + get_node_count(x.right)
+2. `get_leaf_count(x)`
+
+   - if root is not NULL, if root->left and root->right are NULL return 1
+   - else return get_leaf_count(x.left) + get_leaf_count(x.right)
+
+3. `get_height(x)`
+   - get max from left and right subtree + 1(for self)
