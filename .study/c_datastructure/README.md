@@ -1042,3 +1042,24 @@ while (p->link != NULL) vs while (p != NULL)
 
 3. `get_height(x)`
    - get max from left and right subtree + 1(for self)
+
+<br/>
+
+### 8.10 Threaded Binary Tree
+
+- Motivation
+  - recursion creates function overhead in stack
+  - implement traversing in BT w/o stack and recursion
+- Using `NULL` links
+  - `n - 1` links point other nodes
+  - `n + 1` links are NULL
+  - total `2n` links are present
+- Definition
+
+  - While `inorder`traversing, inside `NULL` links, inorder predecessor and inorder successor are set
+
+- Implementation
+
+  1. require `tag` to distinguish terminal or nonterminal nodes
+
+  2. `find_successor()`check for successor
