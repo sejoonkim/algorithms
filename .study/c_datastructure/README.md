@@ -934,3 +934,53 @@ while (p->link != NULL) vs while (p != NULL)
   3. other trees
 
 <br/>
+
+### 8.3 Handling Binary Tree
+
+- Array
+  - index 0 is `not` used
+  - size gets increased per 2^(k-1)
+  - index of node `i`
+    - `i / 2` = parent index of node `i`
+    - `2i` = left child node index
+    - `2i + 1` = right child node index
+- Linked Lists
+  - struct
+    - left, right `pointer`
+    - data
+
+<br/>
+
+### 8.4 Traversing Binary Tree
+
+- preorder, inorder, postorder traversal
+- When visit Root?
+  - VLR, LVR, LRV
+- algorithm = `recursion`
+  - why? = same substructure, size of problem decrease
+- `preorder`
+  - process
+    1. visit root
+    2. go left subtree
+    3. go right subtree
+- `inorder`
+  - process
+    1. go left subtree
+    2. visit root
+    3. go right subtree
+- `postorder`
+  - process
+    1. go to left subtree
+    2. go to right subtree
+    3. visit root
+
+<br/>
+
+### 8.5 Traverse with Loop
+
+- require `stack`
+
+- left child nodes get added to`stack` until `NULL`
+- gets deleted after meeting `NULL`
+- then check `right` child node
+- add left child nodes to `stack`
