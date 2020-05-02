@@ -511,7 +511,7 @@ Table of Contents
     /*
     1
     49
-    ╔
+    ?
     1
     -------------
     9
@@ -984,3 +984,23 @@ while (p->link != NULL) vs while (p != NULL)
 - gets deleted after meeting `NULL`
 - then check `right` child node
 - add left child nodes to `stack`
+
+<br/>
+
+### 8.6 Level Order Traversal
+
+- queue
+- process
+
+  1. dequeue and visit
+  2. enqueue child nodes
+  3. loop until queue empty
+     1. pop
+     2. print
+     3. push
+     4. push
+
+- which traversal method to choose?
+  - order to operate
+    - child nodes first? `postorder`
+    - parent nodes first? `preorder`
