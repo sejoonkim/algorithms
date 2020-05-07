@@ -1257,3 +1257,58 @@ while (p->link != NULL) vs while (p != NULL)
 <br/>
 
 <br/>
+
+## Graph I
+
+### 10.1 What is graph?
+
+- Definition
+
+  - DS that represents relation between nodes
+
+  - logical tool ex) map(cities), subway(stations), circuit(resistance)
+
+  - Graph
+
+    - Tree, a special kind of graph
+
+  - Eulerian tour
+
+    - while visiting all edges, returning to the start node
+
+    - possible only when all nodes have `even` number of edges
+
+<br/>
+
+### 10.2 Graph Syntax
+
+- Definition
+  - finite set of vertices and edges
+  - G = (V, E)
+- Categories
+
+  - undirected graph
+    - (0, 1)
+    - total degrees = 2 \* edges
+    - connected graph
+      - there exists path to visit all nodes
+    - unconnected graph
+    - complete graph
+      - all nodes are connected with edge
+      - edges = nodes \* (nodes - 1) / 2
+  - directed graph
+    - <0, 1>
+  - network = weighted graph
+    - edges having `weights`
+  - subgraph
+  - path
+    - cycle, repeating edges
+    - simple path
+
+- Graph ADT
+  - create_graph, init
+  - insert_vertex, insert_edge
+  - delete_vertex, delete_edge
+  - is_empty
+  - adjacent
+  - destroy_graph
