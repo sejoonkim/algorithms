@@ -1213,3 +1213,17 @@ while (p->link != NULL) vs while (p != NULL)
   - better than insertion sort = O(n^2)
   - useful when
     - needing several `Max` elements
+
+<br/>
+
+### 9.6 Machine Scheduling
+
+- Target
+  - run machine full capacity
+  - finish `at least` time
+- `LPT` (Longest Processing Time first)
+
+  - ending task time is important
+
+- Purpose
+  - need to get the available machines , maintaining the array
