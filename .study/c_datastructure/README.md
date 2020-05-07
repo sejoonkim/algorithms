@@ -1332,3 +1332,19 @@ while (p->link != NULL) vs while (p != NULL)
 
    - excels at `sparse` graph
    - O(n + e) = total edges
+
+<br/>
+
+### 10.4 Traverse Graph
+
+### 10.5 DFS
+
+- Implementation
+  - recursion, adjacency matrix
+  - recursion, adjacency list
+  - stack
+- Analysis
+  - O(n + e) = adj list
+  - O(n^2) = adj matrix
+
+<br/>
