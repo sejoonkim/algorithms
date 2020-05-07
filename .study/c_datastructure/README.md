@@ -1227,3 +1227,33 @@ while (p->link != NULL) vs while (p != NULL)
 
 - Purpose
   - need to get the available machines , maintaining the array
+
+<br/>
+
+### 9.7 Huffman Coding
+
+- Definition
+  - frequency tree of letters
+- Introduction
+  - acquiring the least length encoding bitfields
+  - compressing data -> `DO NOT` use ASCII
+  - dynamic length code, assign high frequency with lesser bit length, low frequency with bigger bit length
+- Problem to Solve when `text is given`
+  1. How to dynamically generate bitcodes
+  2. how to decompress the text and restore
+- Concept
+  - to decompress,
+    - any code must not be **the first part** of other codes
+  - `Huffman codes` hold the above concept
+- Process of making `Huffman codes`
+  1. list ascending, pick two of the smallest to create as terminal nodes to create binary tree
+  2. root = child + child
+  3. add the added root to the list, pick two smallest to create as terminal nodes
+  4. add the added root to the list, pick two smallest to create as terminal nodes...finish making tree
+  5. left edge = 1, right edge = 0
+  6. reading the label to each node = Huffman code
+- `pick two smallest` = `Min Heap tree` is used
+
+<br/>
+
+<br/>
