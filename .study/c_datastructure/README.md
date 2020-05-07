@@ -1204,3 +1204,12 @@ while (p->link != NULL) vs while (p != NULL)
   - `log(n)` = insertion, deletion = the number of height
 
 <br/>
+
+### 9.5 Heap Sort
+
+- analysis
+  - `height` = `logN` (complete binary tree)
+  - inserting or deleting a single element requires `logN`
+  - better than insertion sort = O(n^2)
+  - useful when
+    - needing several `Max` elements
