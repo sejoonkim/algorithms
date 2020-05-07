@@ -1348,3 +1348,14 @@ while (p->link != NULL) vs while (p != NULL)
   - O(n^2) = adj matrix
 
 <br/>
+
+### 10.6 BFS
+
+- Implementation
+  - queue
+  - d-> d + 1 -> ...
+  - adjacency matrix, queue
+  - adjacency list, queue
+- analysis
+  - O(n + e) = adj list
+  - O(n^2) = adj matrix
