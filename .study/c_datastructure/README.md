@@ -1312,3 +1312,23 @@ while (p->link != NULL) vs while (p != NULL)
   - is_empty
   - adjacent
   - destroy_graph
+
+<br/>
+
+### 10.3 Representing Graph
+
+1. adjacency matrix
+
+   - 2-D array
+
+   - if undirected graph = `symmetric`
+   - excels at `dense` graph, poor at `sparse` graph = size-wise
+   - TC
+     - O(1) - edges exist
+     - O(n) - degree of node
+     - O(n^2) - total edges
+
+2. adjacency list
+
+   - excels at `sparse` graph
+   - O(n + e) = total edges
