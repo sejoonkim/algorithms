@@ -600,6 +600,7 @@ Table of Contents
 ### 5.5 Deque
 
 - double-ended queue
+
 - compared to Circular Queue
 
   - `delete_rear()`
@@ -1075,9 +1076,11 @@ while (p->link != NULL) vs while (p != NULL)
       - many fields
 
 - `Definition`
+
   - `primary key` for any record
   - root > left subtree
   - root < right subtree
+
 - `search(root, key)`
 
   - check `key` value with root
@@ -1136,3 +1139,68 @@ while (p->link != NULL) vs while (p != NULL)
     - return -1 when 1 < 2
     - return 0 when 1 == 2
     - return 1 when 1 > 2
+
+<br/>
+
+<br/>
+
+## Priority Queue
+
+### 9.1 Priority Queue ADT
+
+- use `heap` to implement priority queue
+- ADT
+  - grouping of `n` number of `element` datatyped prioritized elements
+  - operations: create, init, is_empty, is_full, insert, delete, find
+
+<br/>
+
+### 9.2 Implementation
+
+- sorting or not sorting
+- `heap` = `log(n)` for insertion and deletion
+- heap is a complete binary tree
+
+<br/>
+
+### 9.3 Heap
+
+- Definition
+  - parent's key value >= children's key value
+- cf) binary tree
+  - allows `repetitive` values in `heap tree`, not allowed in `binary tree`
+- different kinds
+  1. `max heap`
+  2. `min heap`
+- implementation
+  - array
+    - not use `index 0`
+    - 2n, 2n + 1
+
+<br/>
+
+### 9.4 Implementing Heap
+
+1. definition
+
+   - define `element`
+   - define `tree`
+
+2. insertion
+
+   - insert at the `last` index
+   - compare `key` with parent, switch if bigger
+   - process
+     - drag down the parent node
+     - update the `index`
+     - at `index` insert `item`
+
+3. deletion
+   1. remove the first element
+   2. put last element to first element
+   3. swap with the largest children
+
+- analysis
+  - `log(n)` = insertion, deletion = the number of height
+
+<br/>
