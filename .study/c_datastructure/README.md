@@ -1479,3 +1479,23 @@ while (p->link != NULL) vs while (p != NULL)
   - same TC with Dijkstra
     - O(n^3)
     - but maybe faster
+
+<br/>
+
+### 11.7 Topological Sort
+
+- Introduction
+  - example = pre-requisites for a subject
+  - Definition
+    - list all vertices, considering DAG's preceding order
+- Process
+  1. select in-degree `0` vertex
+  2. delete edges going out of this vertex
+  3. terminates when every vertices are selected and deleted
+- Implementation
+  1. `in_degree` array contains each vertex's in-degree
+  2. save candidates to `stack`
+  3. pop `stack`, print, decrease in-degree values of adjacent vertices
+  4. push `stack` when new candidate appears
+  5. continues until every vertices has been visited
+     - if fail -> `cycle` exists

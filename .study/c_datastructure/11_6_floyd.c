@@ -35,7 +35,7 @@ void floyd(GraphType *g) {
     printA(g);
 
     for (k = 0; k < g->n; k++) {
-        for (i = 0; i <g->n; i++)
+        for (i = 0; i < g->n; i++)
             for (j = 0; j < g->n; j++)
                 if (A[i][k] + A[k][j] < A[i][j])
                     A[i][j] = A[i][k] + A[k][j];
