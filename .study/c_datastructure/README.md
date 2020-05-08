@@ -511,7 +511,7 @@ Table of Contents
     /*
     1
     49
-    ╔
+    ?
     1
     -------------
     9
@@ -1359,3 +1359,47 @@ while (p->link != NULL) vs while (p != NULL)
 - analysis
   - O(n + e) = adj list
   - O(n^2) = adj matrix
+
+<br/>
+
+<br/>
+
+## Graph II
+
+### 11.1 Minimum Cost Spanning Tree
+
+- Definition
+  - included all vertices of Graph G
+  - total number of edges = `n - 1`
+  - no cycle
+  - cost = `minimum` cost of adding edges
+
+<br/>
+
+### 11.2 Kruskal MST
+
+- use `greedy` algorithm
+  - combine locally optimized solutions
+  - need to `validate` if globally optimized
+- check `cycle`
+- process
+  1. order by ascending
+  2. choose minimum cost
+  3. check `cycle`, if not -> add to set
+- Checking `cycle` -> `Union-find`
+
+  - Introduction
+    - `Union(x,y)`: join x, y sets
+    - `Find(x)`: returns the set that x is located in
+  - Process
+    1. get single element sets
+    2. union(a, b): combining sets a, b
+  - Implementation
+    - `tree`
+    - parent pointer expression
+      - use 1-D array, for each single set elements, set parent `index`
+      - if no parent -> `-1`
+      - root node = `-1`
+
+- analysis
+  - eloge
