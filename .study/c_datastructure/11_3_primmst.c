@@ -38,7 +38,7 @@ void prim(GraphType *g, int s) {
         u = get_min_vertex(g->n);
         selected[u] = TRUE;
         if (distance[u] == INF) return;
-        printf("Added vertex %d\n", u);
+        printf("Added vertex %d, its dist: %d\n", u, distance[u]);
         for (v = 0; v < g->n; v++)
             if (g->weight[u][v] != INF)
                 if (!selected[v] && g->weight[u][v] < distance[v])

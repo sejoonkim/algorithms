@@ -1422,9 +1422,33 @@ while (p->link != NULL) vs while (p != NULL)
     | Analysis     | eloge - sparse Graph | n^2 - dense Graph |
 
 - Implementation
-
   - Requirement
     - `distance[number of vertices]`
       - contains distance from certain nodes
       - initially start node = `0`, others = `INF`
     - `priority queue`
+
+<br/>
+
+### 11.4 Shortest Path
+
+- Definition
+  - find the min total weight path from `A` to `B`
+  - 2 ways
+    1. Dijkstra
+    2. Floyd
+
+<br/>
+
+### 11.5 Dijkstra's Shortest Path
+
+- Implementation
+
+  - Requirements
+    - `Array` to keep `node weights spanning from vertex V` = `distance[]`
+  - Process
+    1. add to `S` the least value in `distance`
+    2. modify `distance` values
+
+- analysis
+  - O(n^2)
