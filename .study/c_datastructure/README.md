@@ -1403,3 +1403,28 @@ while (p->link != NULL) vs while (p != NULL)
 
 - analysis
   - eloge
+
+<br/>
+
+### 11.3 Prim's MST
+
+- Introduction
+
+  - start from root
+  - choose the least weight edge
+
+- Comparison
+
+  - |              | Kruskal              | Prim              |
+    | ------------ | -------------------- | ----------------- |
+    | Based on     | Edges                | Vertices          |
+    | Previous ST? | Don't care           | care, expands     |
+    | Analysis     | eloge - sparse Graph | n^2 - dense Graph |
+
+- Implementation
+
+  - Requirement
+    - `distance[number of vertices]`
+      - contains distance from certain nodes
+      - initially start node = `0`, others = `INF`
+    - `priority queue`
