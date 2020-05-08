@@ -1452,3 +1452,30 @@ while (p->link != NULL) vs while (p != NULL)
 
 - analysis
   - O(n^2)
+
+<br/>
+
+### 11.6 Floyd's Shortest Path
+
+- Introduction
+
+  - triple `for` loops
+
+  - dynamic programming
+
+    - let `A^k[i][j]` = using vertices from 0 ~ k, shortest path from i to j
+    - order of finding the shortest path
+      - A(-1) -> A(0) -> A(1) -> ... A(n-1)
+      - A(-1) = initial weight adjacency matrix
+
+  - Situation = `k` vertex is considered
+
+    1. include k
+    2. do not include k
+
+    - `min`(`A^k-1[i][j]`, `A^k-1[i][k]` + `A^k-1[k][j]`)
+
+- analysis
+  - same TC with Dijkstra
+    - O(n^3)
+    - but maybe faster
