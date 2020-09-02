@@ -12,13 +12,10 @@
 .vscode/
 *.exe
 .interview
-<<<<<<< HEAD
 computer_networks/
 .study/inflearn/**/*.*
 !.study/inflearn/**/*.cpp
-=======
 
 *.dSYM/
 .DS_Store
 
->>>>>>> c386975b85acd096ed4d52733de3231a61c58b42
