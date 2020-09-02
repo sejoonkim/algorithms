@@ -108,7 +108,7 @@ void infix_to_postfix(char exp[]) {
 }
 
 int main(void) {
-    char *s = "(2+3)*4+9";
+    char *s = "5+6/3+2-5*6/2";
     printf("infix: %s\n", s);
     printf("postfix: ");
     infix_to_postfix(s);
