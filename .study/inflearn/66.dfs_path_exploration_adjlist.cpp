@@ -3,6 +3,8 @@
 using namespace std;
 
 int ch[30], cnt = 0, n;
+
+// declare the vector
 vector<int> map[30];
 
 void DFS(int v) {
@@ -11,6 +13,7 @@ void DFS(int v) {
         cnt++;
     }
     else {
+        // loop for elements in map[v]
         for (i = 0; i < map[v].size(); i++) {
             if (ch[map[v][i]] == 0) {
                 ch[map[v][i]] = 1;
@@ -30,6 +33,7 @@ int main() {
     cin >> n >> m;
     for (i = 1; i <= m; i++) {
         cin >> a >> b;
+        // construct linked list
         map[a].push_back(b);
     }
     ch[1] = 1;
