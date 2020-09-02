@@ -14,48 +14,83 @@ LEVEL이라는 개념. LEVEL마다 처리할 것이다.
 #include <vector>
 using namespace std;
 
-int n, N, ch[11];
+int n, ch[11];
 
-void printVec(vector<int> &vec) {
-    for (int i = 1; i <= N; i++) {
-        if (vec[i] == 1) {
-            cout << i << ' ';
+void DFS(int L) {
+    int i;
+    if (L == n + 1) {
+        for (i = 1; i <= n; i++) {
+            if (ch[i] == 1) {
+                cout << i << ' ';
+            }
         }
-    }
-    cout << '\n';
-}
-
-void D(int v, int check, vector<int> &vec) {
-    if (v == N+1) {
-        printVec(vec);
+        cout << '\n';
         return;
     }
     else {
-        vec[v] = check;
-        if (v + 1 > N) {
-            D(v+1, 1, vec);
-        }
-        else {
-            D(v+1, 1, vec);
-            D(v+1, 0, vec);
-        }
+        ch[L] = 1;
+        DFS(L+1);
+        ch[L] = 0;
+        DFS(L+1);
     }
 }
 
-int main(void) {
-    ios_base::sync_with_stdio(0);
+int main() {
+    ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int i;
-    cin >> N;
-
-    vector<int> v(N+1);
-
-    D(1, 1, v);
-    D(1, 0, v);
-    
+    cin >> n;
+    DFS(1);
     return 0;
 }
+
+
+
+
+
+
+// int n, N, ch[11];
+
+// void printVec(vector<int> &vec) {
+//     for (int i = 1; i <= N; i++) {
+//         if (vec[i] == 1) {
+//             cout << i << ' ';
+//         }
+//     }
+//     cout << '\n';
+// }
+
+// void D(int v, int check, vector<int> &vec) {
+//     if (v == N+1) {
+//         printVec(vec);
+//         return;
+//     }
+//     else {
+//         vec[v] = check;
+//         if (v + 1 > N) {
+//             D(v+1, 1, vec);
+//         }
+//         else {
+//             D(v+1, 1, vec);
+//             D(v+1, 0, vec);
+//         }
+//     }
+// }
+
+// int main(void) {
+//     ios_base::sync_with_stdio(0);
+//     cin.tie(nullptr);
+
+//     int i;
+//     cin >> N;
+
+//     vector<int> v(N+1);
+
+//     D(1, 1, v);
+//     D(1, 0, v);
+    
+//     return 0;
+// }
 
 // sensei
 // void DFS(int L) {
