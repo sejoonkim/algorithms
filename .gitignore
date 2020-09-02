@@ -3,3 +3,6 @@
 .vscode/
 *.exe
 .interview
+computer_networks/
+.study/inflearn/**/*.*
+!.study/inflearn/**/*.cpp
