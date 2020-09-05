@@ -54,8 +54,8 @@ union find on each sorted edges
 //         int fa = Find(map[i].v1);
 //         int fb = Find(map[i].v2);
 //         if (fa != fb) {
-// Union(map[i].v1, map[i].v2);
-//         sum += map[i].cost;
+//              Union(map[i].v1, map[i].v2);
+//              sum += map[i].cost;
 //         }
         
 //     }
