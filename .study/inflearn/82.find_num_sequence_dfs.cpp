@@ -1,21 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int N, R;
-int ch[16], arr[16], cnt = 0, res[20];
+int arr[16], ch[16], res[16];
+int n, r, cnt = 0;
 
 void DFS(int L) {
     int i;
-    if (L == R) {
-        for (i = 0; i < L; i++) {
+    if (L == r) {
+        for (i = 0; i < r; i++) {
             cout << res[i] << ' ';
-
         }
         cout << '\n';
         cnt++;
     }
     else {
-        for (i = 1; i <= N; i++) {
+        for (i = 1; i <= n; i++) {
             if (ch[i] == 0) {
                 res[L] = arr[i];
                 ch[i] = 1;
@@ -31,9 +30,8 @@ int main(void) {
     cin.tie(nullptr);
 
     int i;
-    cin >> N >> R;
-
-    for (i = 1; i <= N; i++) {
+    cin >> n >> r;
+    for (i = 1; i <= n; i++) {
         cin >> arr[i];
     }
 
